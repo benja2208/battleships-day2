@@ -44,6 +44,12 @@ As a player
 So that I can play against a human opponent
 I would like to play a two-player game
 ```
+## Domain Model
+Objects | Message
+------- | -------
+User | fire at opponents, won or loss, log of hits and misses, two player game
+Board | locations, constraints
+Ships | placeable, directions, sizes, be hit or miss, cannot overlap
 
 Authors :
 * Zhou
