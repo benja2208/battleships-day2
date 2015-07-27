@@ -2,11 +2,7 @@ class Ship
 
   attr_reader :pos
 
-  def initialize
-    @pos = ''
-  end
-
-  def position (num)
+  def initialize(num)
     letter = num[0]
     nums = num[1..-1]
     fail 'Outside the board' unless letter =~ /^[A-J]/

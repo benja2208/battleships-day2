@@ -8,8 +8,8 @@ class Board
     @board = []
   end
 
-  def place(ship)
-    @board << ship
+  def place
+
   end
 
   def empty?

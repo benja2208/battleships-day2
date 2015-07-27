@@ -1,12 +1,12 @@
 require 'board'
 
 describe Board do
-  it { is_expected.to respond_to(:place).with(1).argument }
+  it { is_expected.to respond_to(:place) }
 
   it { is_expected.to respond_to(:fire).with(1).argument }
 
   it 'places a ship' do
-    subject.place double :ship
+    subject.place
     expect(subject).not_to be_empty
   end
 
