@@ -2,7 +2,7 @@
 
 Aim of this week is to create a model of battleships. Working slowly from the small features to the higher level features. Will be apllying everything learnt from week 1 into this. Hopefully, TDD comes more natural now.
 
-These are the user stories I will be trying to model.
+These are the user stories we will be trying to model.
 ```
 As a player
 So that I can prepare for the game
@@ -45,5 +45,6 @@ So that I can play against a human opponent
 I would like to play a two-player game
 ```
 
-Author 
-Zhou
+Authors :
+* Zhou
+* Gaby
