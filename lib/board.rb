@@ -5,11 +5,11 @@ class Board
   attr_reader :board
 
   def initialize
-    @board = []
+    @board = ''
   end
 
   def place
-
+    @board = $e_ships
   end
 
   def empty?
@@ -17,6 +17,7 @@ class Board
   end
 
   def fire(pos)
-
+    return 'Hit' if @board.include? (pos)
   end
 end
+
