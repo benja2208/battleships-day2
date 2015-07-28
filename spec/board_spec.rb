@@ -14,7 +14,7 @@ describe Board do
   end 
 
   describe '#placing ' do 
-    # it { is_expected.to respond_to(:place).with(4).argument }
+    it { is_expected.to respond_to(:place).with(3).argument }
 
     it 'places a ship in its position' do
       subject.place(ship,:a1, :vertically)
@@ -30,19 +30,20 @@ describe Board do
       expect(subject.number_of_lives).to eq 2
     end 
 
-  #   it 'cannot place a ship on another one' do 
-  #     subject.place(ship,1,1,:vertically)
-  #     expect{subject.place(ship,1,1,:vertically}.to raise_error 'Those coordinates are already used!'
-  #   end 
-  # end 
+    # it 'cannot place a ship on another one' do 
+    #   subject.place(ship,:b2,:vertically)
+    #   expect{subject.place(ship,:b2,:vertically)}.to raise_error 'Those coordinates are already used!'
+    # end 
+  end
+  
+  describe '#fire' do 
+    it { is_expected.to respond_to(:fire).with(2).argument }
 
-  # describe '#fire' do 
-  #   it { is_expected.to respond_to(:fire).with(2).argument }
-
-  #   it "says 'H' for a hit" do
-  #     subject.place(ship,1,1,:verticall)
-  #     expect(subject.fire(1,1)).to eq 'H'
-  #   end
+    it "says 'H' for a hit" do
+      subject.place(ship,:b1,:vertically)
+      expect(subject.fire(0,1)).to eq 'H'
+    end
+  end
 
   #   it "says 'M' for a miss" do
   #     subject.place(ship,1,1,:vertically)
@@ -89,20 +90,19 @@ describe Board do
   #     expect(subject.log).to eq 'H:1, M:1'
   #   end 
 
-    it "can figure out all coords horizonally" do
-      expect(subject.all_coords(:a2,4, :horizontally)).to eq [[0,1],[0,2],[0,3],[0,4]]
-    end
+  it "can figure out all coords horizonally" do
+    expect(subject.all_coords(:a2,4, :horizontally)).to eq [[0,1],[0,2],[0,3],[0,4]]
+  end
 
-    it "can figure out all coords:verticallyl" do
-      expect(subject.all_coords(:a2,4, :vertically)).to eq [[0,1],[1,1],[2,1],[3,1]]
-    end
+  it "can figure out all coords:verticallyl" do
+    expect(subject.all_coords(:a2,4, :vertically)).to eq [[0,1],[1,1],[2,1],[3,1]]
+  end
 
-    it "can work out the next vertical coord" do
-      expect(subject.next_vertical_coord(:a1)).to eq :b1
-    end
+  it "can work out the next vertical coord" do
+    expect(subject.next_vertical_coord(:a1)).to eq :b1
+  end
 
-    it "can convert a2 to 0,1" do
-      expect(subject.convert_to_array(:a2)).to eq [0,1]
-    end
+  it "can convert a2 to 0,1" do
+    expect(subject.convert_to_array(:a2)).to eq [0,1]
   end 
 end

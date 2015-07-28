@@ -24,21 +24,7 @@ class Board
       all_coords(coord, ship.size, :vertically).each do |coord|
       grid[coord.first][coord.last] = 'X'
     end
-    # case orientation 
-    #   when "Vertical" 
-    #     fail 'Outside the board' unless x <= size && y+1 <= size
-    #     fail 'Those coordinates are already used!' if @used_coordinates.include? (x.to_s + (y+1).to_s) 
-    #     @used_coordinates += [(x.to_s + y.to_s),(x.to_s + (y+1).to_s)]
-    #     b[y+1][x] = 'X'
-    #   when "Horizontal"
-    #     fail 'Outside the board' unless x+1 <= size && y <= size
-    #     fail 'Those coordinates are already used!' if @used_coordinates.include? ((x+1).to_s + y.to_s) 
-    #     @used_coordinates += [(x.to_s + y.to_s),((x+1).to_s + y.to_s)]
-    #     b[y][x+1] = 'X'
-    # end 
-    # @number_of_X += 2
-    # b[y][x] = 'X'
-    # see_board
+    see_board
   end
 
   def number_of_lives 
