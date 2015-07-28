@@ -1,15 +1,23 @@
 require_relative 'ship'
 
 class Board
+  DEFAULT_SIZE = 10 
+  attr_reader :grid
 
-  attr_reader :board
-
-  def initialize
-    @board = ''
+  def initialize (size_board = DEFAULT_SIZE)
+      @board = Array.new(size_board) {Array.new(size_board,'O')}
+      @grid=[]
   end
 
+  def see_board
+    @board.each do |r|
+      puts r.map { |p| p }.join(" ")
+    end 
+  end 
+
+
   def place
-    @board = $e_ships
+    @grid = $e_ships
   end
 
   def empty?
